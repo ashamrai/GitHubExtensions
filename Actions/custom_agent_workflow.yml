@@ -1,0 +1,10 @@
+name: Build on agent
+
+on:
+  workflow_dispatch
+
+jobs:
+  build:
+    uses: ./.github/workflows/custom_agent_template.yml
+    with:
+      buildEnvTags: '["self-hosted", "my_agent1"]'
