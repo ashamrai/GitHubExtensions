@@ -1,0 +1,15 @@
+name: Deployment Template
+
+on:
+  workflow_call:
+    inputs:
+      buildEnvTags:
+        required: true
+        type: string
+
+jobs:
+  build:
+    runs-on: ${{ fromJSON( inputs.buildEnvTags ) }}
+    steps:
+      - name: Simple Step
+        run: echo "run on ${{ inputs.buildEnvTags }}"
